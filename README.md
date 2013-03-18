@@ -1,4 +1,4 @@
 Jigoshop
-========
+=====
 
-DIBS Jigoshop shop module
+This file will soon be updated with installation guide.
