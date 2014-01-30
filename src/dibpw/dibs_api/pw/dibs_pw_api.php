@@ -309,7 +309,7 @@ class dibs_pw_api extends dibs_pw_helpers {
                    $this->helper_dibs_tools_prefix() . self::api_dibs_get_tableName() . 
                    "` WHERE `orderid` = '" . self::api_dibs_sqlEncode($_POST['orderid']) . 
                    "'  LIMIT 1;", 'status');
-        if(empty($sResult)) {
+        if(empty($sResult) || $sResult == "PENDING") {
             $aFields = array('callback_action' => 1);
             $aResponse = $_POST;
             foreach(self::$aRespFields as $sDbKey => $sPostKey) {

@@ -338,23 +338,25 @@ function jigoshop_dibspayment()
                     
 
 		/**
-		* Successful Payment
-         * complete payment. 
+		 * Successful Payment
+	         * complete payment. 
 		**/
 		function successful_request( $posted ) {
-	        $order_id  = (int) $posted['orderid'];
-            $dibsObj = new dibs_pw_api();
+	      	       if($_POST['status'] == "ACCEPTED") {      
+                         $order_id  = (int) $posted['orderid'];
+            	        $dibsObj = new dibs_pw_api();
             
-            // Load this order from database
-            $order = new jigoshop_order( $order_id );
+     		       // Load this order from database
+    		        $order = new jigoshop_order( $order_id );
         	
-            // We check fields and complete payment. 
+            		// We check fields and complete payment. 
 			if ($dibsObj->api_dibs_checkMainFields($order, $bUrlDecode = TRUE) == 0) {
          		    $order->add_order_note( sprintf( __('DIBS payment completed with transaction id %s.', 'jigoshop'), $transaction_id ) );
                  	$order->payment_complete();
 					print "Success.\n";
      			}
 			exit('Dibs callback complete.');
+		      }
 		}
 
 

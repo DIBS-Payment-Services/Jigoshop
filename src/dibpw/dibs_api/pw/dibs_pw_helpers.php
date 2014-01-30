@@ -116,7 +116,7 @@ class dibs_pw_helpers extends dibs_pw_helpers_cms implements dibs_pw_helpers_int
      */
     public function helper_dibs_obj_etc($mOrderInfo) {
         return (object)array(
-            'sysmod'      => 'wpjshop1_4_1_0',
+            'sysmod'      => 'wpjshop1_4_1_1',
         );
     }
     
