@@ -348,6 +348,8 @@ function jigoshop_dibspayment()
             
      		       // Load this order from database
     		        $order = new jigoshop_order( $order_id );
+		
+			$transaction_id = $_POST['transaction'];
         	
             		// We check fields and complete payment. 
 			if ($dibsObj->api_dibs_checkMainFields($order, $bUrlDecode = TRUE) == 0) {
