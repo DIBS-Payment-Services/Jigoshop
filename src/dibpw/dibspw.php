@@ -96,7 +96,7 @@ function jigoshop_dibspayment()
 			);
 
 			$defaults[] = array(
-				'name'		=> __('DIBS Merchant ID','jigoshop'),
+				'name'		=> __('DIBS Integration ID','jigoshop'),
 				'desc' 		=> '',
 				'tip' 		=> __('Please enter your DIBS merchant id; this is needed in order to take payment!','jigoshop'),
 				'id' 		=> 'jigoshop_dibspayment_merchant',
